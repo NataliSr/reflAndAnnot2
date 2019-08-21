@@ -7,7 +7,7 @@ public class Main {
         Class<?> cl = tc.getClass();
 
         if (!cl.isAnnotationPresent(SaveTo.class)) {
-            System.out.println("Error");
+            System.out.println("Annotation not found");
             return;
         }
 
@@ -20,7 +20,7 @@ public class Main {
                     method.invoke(tc, path);
                     break;
                 } else {
-                    System.out.println("Error");
+                    System.out.println("Annotation not found");
                 }
             } catch (InvocationTargetException | IllegalAccessException e) {
                 e.printStackTrace();
